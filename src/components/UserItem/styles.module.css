@@ -1,0 +1,31 @@
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  font-size: 16px;
+  color: #000;
+  text-decoration: none;
+}
+
+.item:hover {
+  color: #626262;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  margin-right: 24px;
+  border-radius: 50%;
+}
+
+@media (min-width: 680px) {
+  .item {
+    font-size: 24px;
+  }
+
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+}

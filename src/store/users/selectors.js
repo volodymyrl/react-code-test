@@ -16,3 +16,8 @@ export const selectIsShowNoResults = createSelector(
 );
 
 export const selectIsShowError = createSelector(selectLoading, selectShowError, (loading, error) => !loading && error);
+export const selectIsAllUsersLoaded = createSelector(
+  selectUsers,
+  selectTotal,
+  (users, total) => users.length === total && users.length !== 0
+);

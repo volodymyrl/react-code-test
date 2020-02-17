@@ -8,7 +8,8 @@ import {
   selectPage,
   selectIsShowError,
   selectIsShowNoResults,
-  selectLoaded
+  selectLoaded,
+  selectIsAllUsersLoaded
 } from "./selectors";
 
 const reducer = combineReducers({ users });
@@ -58,5 +59,19 @@ describe("users reducer", () => {
       .expect(selectIsShowError, true)
       .put(fetchUsers())
       .expect(selectIsShowError, false);
+  });
+
+  it("should represent all user loaded state", () => {
+    testReducer(reducer)
+      .expect(selectIsAllUsersLoaded, false)
+      .put(fetchUsersSuccess({ ...usersResponse, total: 1 }))
+      .expect(selectIsAllUsersLoaded, true);
+  });
+
+  it("should no user for loading state", () => {
+    testReducer(reducer)
+      .expect(selectIsShowNoResults, false)
+      .put(fetchUsersSuccess({ data: [], total: 0 }))
+      .expect(selectIsShowNoResults, true);
   });
 });
