@@ -1,0 +1,46 @@
+.loader {
+  width: 90px;
+  height: 90px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader:after,
+.loader:before {
+  content: "";
+  position: absolute;
+  background-color: #7FB900;
+  opacity: 0.2;
+  border-radius: 50%;
+  animation: pulse 2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.loader:before {
+  animation-delay: -0.5s;
+}
+
+.loaderInner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #7FB900;
+}
+
+@keyframes pulse {
+  0% {
+    top: 45px;
+    left: 45px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 90px;
+    height: 90px;
+    opacity: 0;
+  }
+}
