@@ -5,6 +5,7 @@ import useEventListener from "../../hooks/useEventListener";
 import { debounce } from "../../helpers";
 import UserItem from "../UserItem";
 import Loader from "../Loader";
+import { Header } from "../Header";
 import styles from "./styles.module.css";
 
 const SCROLL_OFFSET = 100;
@@ -42,6 +43,7 @@ const UsersList = ({ isError, isNoResults, users, isLoading, isAllLoaded, loadUs
 
   return (
     <div ref={grid}>
+      <Header />
       {users.map(user => (
         <UserItem key={user.id} user={user} />
       ))}

@@ -1,0 +1,13 @@
+.header {
+  background-color: #F1F1F1;
+  font-size: 16px;
+  font-size: 16px;
+  padding: 21px;
+  text-align: center;
+}
+
+@media (min-width: 680px) {
+  .header {
+    font-size: 24px;
+  }
+}
