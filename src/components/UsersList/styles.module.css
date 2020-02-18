@@ -28,8 +28,18 @@
   color: #fff;
   background-color: #000;
   border: none;
+  cursor: pointer;
 }
 
-.loadMore:isLoading {
+.loadMore:hover {
   opacity: 0.5;
+}
+
+
+@media (min-width: 680px) {
+  .loadMore {
+    max-width: 300px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
