@@ -7,7 +7,6 @@ const initialState = {
   isNoResults: false,
   isError: false,
   isLoading: false,
-  isLoading: false,
   isAllLoaded: false
 };
 

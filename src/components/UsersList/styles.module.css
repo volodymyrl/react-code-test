@@ -16,5 +16,20 @@
 }
 
 .loading {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.loadMore {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 16px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+}
+
+.loadMore:isLoading {
+  opacity: 0.5;
 }

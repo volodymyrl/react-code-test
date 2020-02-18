@@ -1,4 +1,8 @@
-.loadingScreen{
+.app {
+  width: 100%;
+}
+
+.loadingScreen {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -8,4 +12,11 @@
   top: 0;
   left: 0;
   background: #fff;
+}
+
+@media (min-width: 680px) {
+  .app {
+    width: 640px;
+    margin: 0 auto;
+  }
 }

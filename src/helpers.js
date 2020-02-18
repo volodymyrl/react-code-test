@@ -44,3 +44,22 @@ export function testReducer(rootReducer, initialState) {
     return this;
   };
 }
+
+/**
+ * The result of the debounce decorator (f, ms) should be a wrapper
+ * that should be called no more than once in ms milliseconds.
+ * @param {Function} func - callback function
+ * @param {Number} ms - timeout in milliseconds
+ */
+export const debounce = (func, ms) => {
+  let isCooldown = false;
+
+  return function() {
+    if (isCooldown) return;
+
+    func.apply(this, arguments);
+    isCooldown = true;
+
+    setTimeout(() => (isCooldown = false), ms);
+  };
+};

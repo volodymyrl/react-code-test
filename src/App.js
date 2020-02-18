@@ -11,12 +11,13 @@ const App = ({ loadUsers }) => {
 
   useEffect(() => {
     loadUsers();
+    /* eslint-disable-next-line */
   }, []);
 
   useTimeout(() => toggleLoadingScreen(false), SHOW_USERS_DELAY);
 
   return (
-    <div className="App">
+    <div className={styles.app}>
       {isLoadingScreen ? (
         <div className={styles.loadingScreen}>
           <Loader />
